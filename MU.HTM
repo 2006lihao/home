@@ -1,0 +1,232 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>MU</title>
+<script language="JavaScript">status=' 歡迎光臨 !'</script>
+<style type="text/css">
+A:link    {color:red;FONT-SIZE:12px;}
+A:visited {color:red;FONT-SIZE:12px;}
+font {font-size:10pt;}
+</style>
+<script language="javascript">
+function jumpMenu(selObj){
+  window.open(selObj.options[selObj.selectedIndex].value);
+  selObj.selectedIndex=0;}
+</script>
+</head>
+<body bgcolor="#DDEAEC" topmargin="0" leftmargin="0"; onLoad="startclock(); timerONE=window.setTimeout">
+<table width="545" height="80" border="0">
+  <tr> 
+    <td width="465" rowspan="2" valign="top"> <div align="center">
+        <script language="javascript">
+var content='歡迎來到<a href="http://myweb.hinet.net/home9/jiabo"target="_blank"> 網路綜合資源網 </a> 逛逛，或許可以在這找到你需要的連結！<br>若是各位知道一些不錯的站，務必告訴我，我可以加入連結<br>讓大家的連結可以越來越快&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;91.11.21建立<br><br><font color=blue>最後更新 93.2.25</font>';
+
+var boxheight=80;        // 背景高(PIXELS)
+var boxwidth=420;        // 背景寬(PIXELS)
+var boxcolor="#DDEAEC";  // 背景色#FFF6E9
+var speed=80;            // 捲動速度 (1 秒=1000 微秒)..
+var pixelstep=1;         // 每捲一步的速度
+var godown=false;        // 捲動方向,上到下=TRUE , 下到上=FALSE
+
+// 以下別更動
+var outer,inner,elementheight,ref,refX,refY;
+var w3c=(document.getElementById)?true:false;
+var ns4=(document.layers)?true:false;
+var ie4=(document.all && !w3c)?true:false;
+var ie5=(document.all && w3c)?true:false;
+var ns6=(w3c && navigator.appName.indexOf("Netscape")>=0)?true:false;
+var txt='<font>';
+if(ns4){
+txt+='<table cellpadding=0 cellspacing=0 border=0 height='+boxheight+' width='+boxwidth+'><tr><td>';
+txt+='<ilayer name="ref" bgcolor="'+boxcolor+'" width='+boxwidth+' height='+boxheight+'></ilayer>';
+txt+='</td></tr></table>'
+txt+='<layer name="outer" bgcolor="'+boxcolor+'" visibility="hidden" width='+boxwidth+' height='+boxheight+'>';
+txt+='<layer  name="inner"  width='+(boxwidth-4)+' height='+(boxheight-4)+' visibility="hidden" left="2" top="2" >'+content+'</layer>';
+txt+='</layer>';
+}else{
+txt+='<div id="ref" style="position:relative; width:'+boxwidth+'; height:'+boxheight+'; background-color:'+boxcolor+';" ></div>';
+txt+='<div id="outer" style="position:absolute; width:'+boxwidth+'; height:'+boxheight+'; visibility:hidden; background-color:'+boxcolor+'; overflow:hidden" >';
+txt+='<div id="inner"  style="position:absolute; visibility:visible; left:2px; top:0px; width:'+(boxwidth-4)+'; overflow:hidden; cursor:default;">'+content+'</div>';
+txt+='</div></font>';
+}
+document.write(txt);
+
+function getElHeight(el){
+if(ns4)return (el.document.height)? el.document.height : el.clip.bottom-el.clip.top;
+else if(ie4||ie5)return (el.style.height)? el.style.height : el.clientHeight;
+else return (el.style.height)? parseInt(el.style.height):parseInt(el.offsetHeight);
+}
+
+function getPageLeft(el){
+var x;
+if(ns4)return el.pageX;
+if(ie4||w3c){
+x = 0;
+while(el.offsetParent!=null){
+x+=el.offsetLeft;
+el=el.offsetParent;
+}
+x+=el.offsetLeft;
+return x;
+}}
+
+function getPageTop(el){
+var y;
+if(ns4)return el.pageY;
+if(ie4||w3c){
+y=0;
+while(el.offsetParent!=null){
+y+=el.offsetTop;
+el=el.offsetParent;
+}
+y+=el.offsetTop;
+return y;
+}}
+
+function scrollbox(){
+if(ns4){
+inner.top+=(godown)? pixelstep: -pixelstep;
+if(godown){
+if(inner.top>boxheight)inner.top=-elementheight;
+}else{
+if(inner.top<2-elementheight)inner.top=boxheight+2;
+}}else{
+inner.style.top=parseInt(inner.style.top)+((godown)? pixelstep: -pixelstep)+'px';
+if(godown){
+if(parseInt(inner.style.top)>boxheight)inner.style.top=-elementheight+'px';
+}else{
+if(parseInt(inner.style.top)<2-elementheight)inner.style.top=boxheight+2+'px';
+}}}
+
+window.onresize=function(){
+if(ns4)setTimeout('history.go(0)', 400);
+else{
+outer.style.left=getPageLeft(ref)+'px';
+outer.style.top=getPageTop(ref)+'px';
+}}
+
+window.onload=function(){
+outer=(ns4)?document.layers['outer']:(ie4)?document.all['outer']:document.getElementById('outer');
+inner=(ns4)?outer.document.layers['inner']:(ie4)?document.all['inner']:document.getElementById('inner');
+ref=(ns4)?document.layers['ref']:(ie4)?document.all['ref']:document.getElementById('ref');
+elementheight=getElHeight(inner);
+if(ns4){
+outer.moveTo(getPageLeft(ref),getPageTop(ref));
+outer.clip.width=boxwidth;
+outer.clip.height=boxheight;
+inner.top=(godown)? -elementheight : boxheight-2;
+inner.clip.width=boxwidth-4;
+inner.clip.height=elementheight;
+outer.visibility="show";
+inner.visibility="show";
+}else{
+outer.style.left=getPageLeft(ref)+'px';
+outer.style.top=getPageTop(ref)+'px';
+inner.style.top=((godown)? -elementheight : boxheight)+'px';
+inner.style.clip='rect(0px, '+(boxwidth-4)+'px, '+(elementheight)+'px, 0px)';
+outer.style.visibility="visible";
+}
+setInterval('scrollbox()',speed);
+}</script>
+      </div></td>
+    <td width="80" height="40">
+      <select name="door" style="COLOR:#0000CD;background-color:#DDECE0" onChange="jumpMenu(this)">
+        <option selected>入口網站</option>
+        <option value="http://www.kimo.com.tw">Yahoo!奇摩</option>
+        <option value="http://www.hinet.net">HiNet</option>
+        <option value="http://www.yam.com.tw">蕃薯藤</option>
+        <option value="http://www.sina.com.tw">新浪網</option>
+        <option value="http://www.pchome.com.tw">PCHOME</option>
+        <option value="http://www.msn.com.tw">MSN台灣</option>
+        <option value="http://www.seednet.net.tw">SeedNet</option>
+        <option value="http://www.openfind.com.tw">Openfind</option>
+        <option value="http://www.gigigaga.com">GiGiGaGa</option>
+        <option value="http://www.dreamer.com.tw">夢想家</option>
+        <option value="http://www.coo.com.tw">Coo台灣索引</option>
+      </select>
+    </td>
+  </tr>
+  <tr> 
+    <td width="80" height="40">
+      <form method="post" action="http://www.hytv.com.tw/cgi/tvsearch.cgi" name="channel" target="_blank">
+        <select name="CH" style="font-size:12px;COLOR:#0000CD;background-color:#DDECE0" onChange="document.channel.submit();this.selectedIndex=0">
+          <option selected>電視節目表</option>
+          <option value="ttv">台視</option>
+          <option value="ctv">中視</option>
+          <option value="cts">華視</option>
+          <option value="tvbs4">超視</option>
+          <option value="mintv">民視</option>
+          <option value="mintv1">民視新聞台</option>
+          <option value="tvbs1">TVBS無線衛星</option>
+          <option value="gold1">TVBS-G</option>
+          <option value="tvbs3">TVBS-N</option>
+          <option value="hbo1">HBO</option>
+          <option value="tvbs5">AXN頻道</option>
+          <option value="cinemax1">CINEMAX</option>
+          <option value="cbs1">好萊塢電影</option>
+          <option value="cmctv">中得電影</option>
+          <option value="star5">衛視西片台</option>
+          <option value="cd1">東森洋片台</option>
+          <option value="hal1">HALLMARK</option>
+          <option value="fsw2">緯來電影台</option>
+          <option value="star4">衛視電影台</option>
+          <option value="ls1">龍祥電影台</option>
+          <option value="u1">東森電影台</option>
+          <option value="star0">衛視中文台</option>
+          <option value="star1">衛視合家歡</option>
+          <option value="espn1">ESPN體育台</option>
+          <option value="star2">衛視體育台</option>
+          <option value="vl3">緯來體育台</option>
+          <option value="Much">MUCH-TV</option>
+          <option value="ffbus1">非凡商業台</option>
+          <option value="ffbus2">非凡新聞台</option>
+          <option value="ctn2">中天資訊台</option>
+          <option value="chst2">華人商業台</option>
+          <option value="vl2">緯來綜合台</option>
+          <option value="vl4">緯來戲劇台</option>
+          <option value="sing1">三立台灣台</option>
+          <option value="sing2">三立都會台</option>
+          <option value="sing3">SETN新聞台</option>
+          <option value="fsw1">GTV第1台</option>
+          <option value="gtv1">GTV綜合台</option>
+          <option value="gtv2">GTV戲劇台</option>
+          <option value="u2">東森綜合台</option>
+          <option value="u3">東森育樂台</option>
+          <option value="u4">東森新聞台</option>
+          <option value="u6">東森新聞S台</option>
+          <option value="chst3">華人新聞台</option>
+          <option value="ctn1">中天新聞台</option>
+          <option value="heart1">中天娛樂台</option>
+          <option value="pl1">霹靂頻道</option>
+          <option value="chst1">華人戲劇台</option>
+          <option value="eranews">ERA-NEWS</option>
+          <option value="goodtv">好消息頻道</option>
+          <option value="phtv1">迪士尼頻道</option>
+          <option value="u5">東森幼幼台</option>
+          <option value="vl1">緯來日本台</option>
+          <option value="jap1">國興日片</option>
+          <option value="jet1">JET日本台</option>
+          <option value="nhka1">NHK亞洲台</option>
+          <option value="star3">衛視音樂台</option>
+          <option value="Mtv">MTV</option>
+          <option value="plus">東風衛視</option>
+          <option value="disc1">DISCOVERY</option>
+          <option value="voyages">Voyages知性台</option>
+          <option value="geogr1">國家地理頻道</option>
+          <option value="ap">動物星球頻道</option>
+          <option value="pts">公視</option>
+          <option value="nou">空大</option>
+          <option value="ssun1">太陽衛視</option>
+          <option value="sea1">蓬萊仙山台</option>
+          <option value="bts">佛教衛星</option>
+          <option value="love1">大愛電視台</option>
+          <option value="cpt1">衛普電視台</option>
+          <option value="hin1">Knowledge頻道</option>
+          <option value="fg2">人間衛視</option>
+          <option value="zz1">Z頻道</option>
+        </select>
+      </form></td>
+  </tr>
+</table>
+</body>
+</html>

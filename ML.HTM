@@ -1,6 +1,6 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
 <title>ML</title>
 <style type="text/css">
 A:link    {color:#333333;FONT-SIZE:12px;font-weight:bold;}
@@ -49,17 +49,17 @@ if (testMe == 2) firstDay.setDate(0);
 startDay = firstDay.getDay();
 document.write('<table border="1" cellspacing="1" bordercolor="#0098FF" bgcolor="#B2DCE0" align="center"><TR><TD><table border="0" cellspacing="1" cellpadding="2">');
 document.write('<TR><th colspan="7">');
-var dayNames = new Array("¬P´Á¤é","¬P´Á¤@","¬P´Á¤G","¬P´Á¤T","¬P´Á¥|","¬P´Á¤­","¬P´Á¤»");
-var monthNames = new Array("1¤ë","2¤ë","3¤ë","4¤ë","5¤ë","6¤ë","7¤ë","8¤ë","9¤ë","10¤ë","11¤ë","12¤ë");
+var dayNames = new Array("æ˜ŸæœŸæ—¥","æ˜ŸæœŸä¸€","æ˜ŸæœŸäºŒ","æ˜ŸæœŸä¸‰","æ˜ŸæœŸå››","æ˜ŸæœŸäº”","æ˜ŸæœŸå…­");
+var monthNames = new Array("1æœˆ","2æœˆ","3æœˆ","4æœˆ","5æœˆ","6æœˆ","7æœˆ","8æœˆ","9æœˆ","10æœˆ","11æœˆ","12æœˆ");
 var now = new Date();
-document.write("<font style=font-size:9pt;Color:#0066FF>" , now.getYear() + some ," ","¦~",monthNames[now.getMonth()],now.getDate(),"¤é" ," ",dayNames[now.getDay()],"</FONT>");
-document.writeln('</TH></TR><TR><TH BGCOLOR="#FF0000"><font style="font-size:8pt;Color:White">¤é</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:8pt;Color:White">¤@</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:8pt;Color:White">¤G</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:8pt;Color:White">¤T</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:8pt;Color:White">¥|</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:8pt;Color:White">¤­</FONT></TH>');
-document.writeln('<TH BGCOLOR="#008000"><font style="font-size:8pt;Color:White">¤»</FONT></TH>');
+document.write("<font style=font-size:9pt;Color:#0066FF>" , now.getYear() + some ," ","å¹´",monthNames[now.getMonth()],now.getDate(),"æ—¥" ," ",dayNames[now.getDay()],"</FONT>");
+document.writeln('</TH></TR><TR><TH BGCOLOR="#FF0000"><font style="font-size:8pt;Color:White">æ—¥</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:8pt;Color:White">ä¸€</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:8pt;Color:White">äºŒ</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:8pt;Color:White">ä¸‰</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:8pt;Color:White">å››</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:8pt;Color:White">äº”</FONT></TH>');
+document.writeln('<TH BGCOLOR="#008000"><font style="font-size:8pt;Color:White">å…­</FONT></TH>');
 document.writeln("</TR><TR>");
 column = 0;
 for (i=0; i<startDay; i++)
@@ -86,7 +86,7 @@ document.writeln("<TR>");
 column = 0;
 }
 }
-document.writeln('<TR><td colspan="5"><INPUT TYPE="Text" NAME="face" SIZE="13" style="font-size:9.5pt;border-width:0;background-color:#B2DCE0;color:#000080"></TD><td colspan="2" ><input type=button value="¦~¾ä" title="¸U¦~¾ä¡B¹A¥Á¾ä¤Î¥@¬É¦U¦a®É¶¡¹ï·Ó" ALIGN="MIDDLE" onclick=window.open("calendar.htm")></td></TR></TABLE></TD></TR></TABLE>');
+document.writeln('<TR><td colspan="5"><INPUT TYPE="Text" NAME="face" SIZE="13" style="font-size:9.5pt;border-width:0;background-color:#B2DCE0;color:#000080"></TD><td colspan="2" ><input type=button value="å¹´æ›†" title="è¬å¹´æ›†ã€è¾²æ°‘æ›†åŠä¸–ç•Œå„åœ°æ™‚é–“å°ç…§" ALIGN="MIDDLE" onclick=window.open("calendar.htm")></td></TR></TABLE></TD></TR></TABLE>');
 }
 var timerID = null;
 var timerRunning = false;
@@ -104,7 +104,7 @@ function showtime()
  var hours = now.getHours()
  var minutes = now.getMinutes()
  var seconds = now.getSeconds()
- var timeValue = "²{¦b®É¶¡ "
+ var timeValue = "ç¾åœ¨æ™‚é–“ "
      if(hours<10) { timeValue += "0" }
      timeValue += hours
      timeValue += ((minutes < 10) ? ":0" : ":") + minutes
@@ -146,13 +146,13 @@ calendar();
 </script>
       <center>  <font size=1>&nbsp</font><br>
         <span id="we"><img src="javascript:W1('s1p')";width="150" height="168";></span>
-          <a href=javascript:W1('open')>©ñ¤j½Ã¬P¶³¹Ï</a><br>
-          <a href=javascript:W1('s3p')>¥xÆW½Ã¬P¶³¹Ï</a><br>
-          <a href=javascript:W1('s1p')>¨È¬w½Ã¬P¶³¹Ï</a><br>
-          <a href=javascript:W1('s0p')>¥ş²y½Ã¬P¶³¹Ï</a><br>
-          <a href="http://www.cwb.gov.tw/V4/weather/ob/real.htm" target="_blank">¥xÆW²{¦b¤Ñ®ğ</a><br>
-          <a href="http://www.cwb.gov.tw/V4/weather/world/world8.html" target="_blank">¥@¬É¦U¦a¤Ñ®ğ</a><br>
-          <font>¸ê®Æ¨Ó·½¡G¤¤¥¡®ğ¶H§½</font>
+          <a href=javascript:W1('open')>æ”¾å¤§è¡›æ˜Ÿé›²åœ–</a><br>
+          <a href=javascript:W1('s3p')>å°ç£è¡›æ˜Ÿé›²åœ–</a><br>
+          <a href=javascript:W1('s1p')>äºæ´²è¡›æ˜Ÿé›²åœ–</a><br>
+          <a href=javascript:W1('s0p')>å…¨çƒè¡›æ˜Ÿé›²åœ–</a><br>
+          <a href="http://www.cwb.gov.tw/V4/weather/ob/real.htm" target="_blank">å°ç£ç¾åœ¨å¤©æ°£</a><br>
+          <a href="http://www.cwb.gov.tw/V4/weather/world/world8.html" target="_blank">ä¸–ç•Œå„åœ°å¤©æ°£</a><br>
+          <font>è³‡æ–™ä¾†æºï¼šä¸­å¤®æ°£è±¡å±€</font>
           </center></td>
 </table>                                                                                                                      
 </body>
